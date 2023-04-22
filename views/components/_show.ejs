@@ -1,0 +1,16 @@
+
+<% for(var i=0;i<ToDoList.length;i++){ %>
+<tr>
+    <td><%= i+1 %></td>
+    <td><%= ToDoList[i].description %> 
+        </td>
+    <td><%= ToDoList[i].ToBeCompletedTill %></td>
+    <td><a 
+        href="/update-Todo?id=<%= ToDoList[i]._id %>"  class=""
+        >
+        <i class="fas fa-pen-square fa-lg" style="color: #ffd43b;"></i>
+    </a></td>
+
+  </tr>
+  <% } %>
+  

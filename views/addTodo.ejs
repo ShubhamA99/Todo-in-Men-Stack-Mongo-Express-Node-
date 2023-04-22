@@ -1,0 +1,34 @@
+<%- include('components/_header') %>
+
+
+
+   
+<div class="container  d-flex justify-content-center mt-5">
+        
+        
+    <div class="card">
+       
+        <div class="card-body">
+          
+                <form action="/createTodo" method="POST" id="add_ToDo">
+                    <div class="mb-3">
+                      <label for="Description" class="form-label">Description</label>
+                      <input type="text" class="form-control"  name="description"  >
+                    </div>
+
+                    <div class="mb-3">
+                      <label for="ToBeCompletedTill" class="form-label">ToBeCompletedTill</label>
+                      <input type="date" class="form-control" name="ToBeCompletedTill">
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <a href="/" class="btn btn-info mx-auto" role="button"><i class="fas fa-angle-double-left"></i>Link Button</a> 
+                  </form>
+            
+        </div>
+      </div>
+    </div>
+    
+   
+
+<%- include('components/_footer') %>

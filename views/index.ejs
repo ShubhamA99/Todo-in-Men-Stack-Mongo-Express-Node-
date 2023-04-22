@@ -1,0 +1,34 @@
+
+<%- include('components/_header') %>
+
+<div class="row py-5">
+    <div class="col-lg-10 mx-auto">
+        <a href="/add-todo" class="btn btn-info mx-auto" role="button"><i class="fas fa-angle-double-left"></i>Link Button</a> 
+      <div class="card rounded shadow border-0">
+        <div class="card-body p-5 bg-white rounded">
+          <div class="table-responsive">
+
+            <form action="/" method="POST" >
+            <table  class="table table-striped table-bordered">
+              <thead>
+                <tr>
+                    <th>no.</th>
+                  <th>Description</th>
+                  <th>ToBeCompletedTill</th>
+                  <th>Edit /Delete</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+              <%- include('components/_show.ejs') %>
+              </tbody>
+            </table>
+        </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include('components/_footer') %>

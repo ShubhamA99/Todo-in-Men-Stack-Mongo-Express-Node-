@@ -9,8 +9,17 @@
         href="/update-Todo?id=<%= ToDoList[i]._id %>"  class=""
         >
         <i class="fas fa-pen-square fa-lg" style="color: #ffd43b;"></i>
-    </a></td>
+    </a>
+    <a 
+    href="/delete-Todo?id=<%= ToDoList[i]._id %>"  class=""
+    >
+    <i class="fas fa-times-circle fa-lg" style="color: #ff0000;"></i>
+    </a>
+    </td>
 
+
+
+   
   </tr>
   <% } %>
   

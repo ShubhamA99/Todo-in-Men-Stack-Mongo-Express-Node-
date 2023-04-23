@@ -27,6 +27,20 @@ exports.update = (req,res) =>{
    
 }
 
+
+
+exports.delete = (req,res) =>{
+    console.log(req.query.id);
+    axios.delete(`http://localhost:8080/deleteTodo/${req.query.id}`)
+    .then(function(axiosResponse){
+        console.log(axiosResponse);
+        res.redirect("/")
+    }).catch(err=>{
+        res.send(err)
+    })
+    
+   
+}
 exports.addTodo = (req,res)=>{
     res.render("addTodo")
 }

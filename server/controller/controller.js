@@ -58,6 +58,58 @@ exports.getById=(req,res)=>{
     })
 }
 
+exports.update =(req,res)=>{
+    if(!req.body){
+        res.status(400)
+        .send({message:"Lokk in first if"})
+        
+    }
+
+    const id = req.params['id']
+  
+    Tododb.findByIdAndUpdate(id,req.body,{useFindAndModify:false})
+    .then(data=>{
+        if (!data){
+            res.status(400)
+            .send({message:`Cannot Update Data ${id}`})
+        }else{
+            console.log("inside update cont");
+            console.log(data);
+            res.send(data)
+        }
+    }).catch(err=>{
+        res.status(500)
+        .send({message:err.message})
+    })
+}
+
+
+exports.delete =(req,res)=>{
+    if(!req.body){
+        res.status(400)
+        .send({message:"Lokk in first if"})
+        
+    }
+
+    const id =req.params['id']
+    
+    Tododb.findByIdAndDelete(id)
+    .then(data=>{
+        if (!data){
+            res.status(400)
+            .send({message:`Cannot Update Data ${id}`})
+        }else{
+            
+          console.log(data);
+            res.send(data)
+        }
+    }).catch(err=>{
+        res.status(500)
+        .send({message:err.message})
+    })
+
+    
+}
 
 
 

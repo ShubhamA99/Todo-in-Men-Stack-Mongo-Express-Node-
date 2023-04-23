@@ -4,7 +4,7 @@ $(document).ready(function(){
    
     $("#update_ToDo").submit(function(event){
         event.preventDefault();
-
+        console.log("inside submit-----------------");
         var unindexed_array = $(this).serializeArray();
         var data={};
 
@@ -12,11 +12,17 @@ $(document).ready(function(){
             data[n['name']]=n['value']
         })
 
-        console.log(data);
+        
 
         var request ={
-            "url":``
+            "url":`http://localhost:8080/update/${data.id}`,
+            "method":"PUT",
+            "data":data
         }
+        
+        $.ajax(request).done(function(ajaxRes){
+            window.location.href = "http://localhost:8080/";
+        })
 
      })
 
